@@ -194,6 +194,17 @@ html body{
     color: #fff;
     text-decoration: none;
     border-radius: 100px;
+    
+}
+.text-about a:hover{
+    padding: 8px 22px;
+    color: black;
+    border: 1px solid #fff;
+    background-color: #fff;
+    text-decoration: none;
+    border-radius: 100px;
+    transition: all ease-in-out;
+    transition-duration: 1s;
 }
 #about img{
     width: 200px;
