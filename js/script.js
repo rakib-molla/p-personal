@@ -28,6 +28,8 @@ function firstPageAnim() {
     });
 }
 
+var timeOut;
+
 function circleSlimWhenMouseMove(){
    // define default scale value
 
@@ -35,7 +37,7 @@ function circleSlimWhenMouseMove(){
    var yprev = 0;
 
    window.addEventListener("mousemove", function(details){
-     
+     clearTimeout(timeOut)
       xscale =   gsap.utils.clamp(.8, 1.2, details.clientX - xprev);
       yscale =   gsap.utils.clamp(.8, 1.2, details.clientY - yprev);
 
@@ -43,7 +45,11 @@ function circleSlimWhenMouseMove(){
       yprev = details.clientY;
 
       circleMouseFollower(xscale, yscale);
-     
+
+     timeOut = this.setTimeout(function(){
+      document.querySelector('#mini-circle').style.transform = `translate(${details.clientX}px, ${details.clientY}px) scale(1, 1)`
+     });
+
    })
 }
 
